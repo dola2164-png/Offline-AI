@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import { API_URL } from '../../config';
 const LANGUAGES = ['Hindi', 'English', 'Bengali', 'Tamil', 'Telugu', 'Marathi', 'Gujarati', 'Kannada', 'Malayalam', 'Punjabi', 'Urdu', 'Odia', 'Assamese', 'Konkani', 'Nepali', 'Sindhi', 'Dogri', 'Kashmiri', 'Manipuri', 'Bodo'];
-const API_BASE = 'http://localhost:8080/api';
+const API_BASE = `${API_URL}/api`;
 const LANGUAGE_CODES = { Hindi: 'hi-IN', Bengali: 'bn-IN', Tamil: 'ta-IN', Telugu: 'te-IN', Marathi: 'mr-IN', Gujarati: 'gu-IN', Kannada: 'kn-IN', Malayalam: 'ml-IN', Punjabi: 'pa-IN', Urdu: 'ur-IN' };
 
 const GREETINGS = {
