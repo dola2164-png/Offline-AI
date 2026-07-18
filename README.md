@@ -279,7 +279,7 @@ server:
 
 spring:
   datasource:
-    url: ${DB_URL}            # e.g. jdbc:postgresql://<supabase-host>:6543/postgres?prepareThreshold=0
+    url: ${DB_URL}            # e.g. jdbc:postgresql://<supabase-host>:1111/postgres?prepareThreshold=0
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
   jpa:
