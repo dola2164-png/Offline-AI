@@ -112,7 +112,7 @@ public class ChatService {
 
     // Executes the tool the model asked for, using its own extracted arguments.
     private String runTool(AIService.ToolCall call) {
-    System.out.println(">>> TOOL CALLED: " + call.name() + " with args: " + call.arguments());  // ← ADD THIS LINE
+    System.out.println(">>> TOOL CALLED: " + call.name() + " with args: " + call.arguments()); 
     try {
         Map<String, Object> a = call.arguments();
         return switch (call.name()) {
