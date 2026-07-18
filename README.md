@@ -326,13 +326,24 @@ export SARVAM_API_KEY="<your-sarvam-key>"
 
 > Fill in exact request/response shapes from `ChatRequest`, `ChatResponse`, and `ChatMessage` DTOs as your API stabilizes.
 
+## 🗺️ Roadmap
+
+**"Every Farmer. Every Village. Every Language. One AI."**
+
+| Today | Next Phase | Future Vision |
+|---|---|---|
+| ✅ Live Prototype | 🔜 IVR Support | 🔮 Banking Services |
+| ✅ AI Integration | 🔜 Offline Voice AI | 🔮 Drone Advisory |
+| ✅ Multilingual Support | 🔜 Government API Integration | 🔮 Satellite Monitoring |
+| ✅ Crop Advisory | 🔜 Personalized Recommendations | 🔮 AI-Powered Farm Planning |
+| ✅ Weather & Market Prices | 🔜 Transport Marketplace | |
 
 ## 👥 Team CodeGirl
 
 
 ## 📄 License
 
-This project was built for [Hackathon Name]. Add a license (e.g., MIT) here if you intend to open-source it.
+This project is licensed under the [MIT License](LICENSE) — see the `LICENSE` file for details.
 
 ---
 
