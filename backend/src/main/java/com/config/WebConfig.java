@@ -10,7 +10,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
                 .allowedOrigins(
-                   "https://offline-ai-d238.onrender.com",
                     "https://offline-ai-frontend.onrender.com",
                     "http://localhost:5173",
                     "http://localhost:8080"
