@@ -8,7 +8,7 @@ Offline AI brings agentic, multilingual, AI-powered farming assistance to **any 
 
 Built by **Team CodeGirl** for [Hackathon Name].
 
-🔗 Repo: `github.com/codegirl/offline-ai` · 🌐 Demo: `[offline-ai.demo.live](https://offline-ai-frontend.onrender.com/)`
+🔗 Repo: `github.com/codegirl/offline-ai` · 🌐 Demo: [offline-ai.demo.live](https://offline-ai-frontend.onrender.com/)
 
 ---
 
