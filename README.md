@@ -326,13 +326,6 @@ export SARVAM_API_KEY="<your-sarvam-key>"
 
 > Fill in exact request/response shapes from `ChatRequest`, `ChatResponse`, and `ChatMessage` DTOs as your API stabilizes.
 
-## 🗺️ Roadmap
-
-- [ ] Expand disease detection coverage to more crops
-- [ ] Add more Indian languages via Sarvam AI
-- [ ] Integrate direct mandi price feeds (e.g., Agmarknet)
-- [ ] Pilot with a farmer cooperative for real-world feedback
-- [ ] Move from demo telephony sandbox to production-grade call/SMS gateway
 
 ## 👥 Team CodeGirl
 
