@@ -321,7 +321,6 @@ export SARVAM_API_KEY="<your-sarvam-key>"
 | `POST /api/trucks/register` | `TruckRegistrationController` | Registers a truck for the transport booking feature |
 | `GET /api/trucks` | `TruckRegistrationController` | Lists available trucks |
 
-> Fill in exact request/response shapes from `ChatRequest`, `ChatResponse`, and `ChatMessage` DTOs as your API stabilizes.
 
 ## 🗺️ Roadmap
 
