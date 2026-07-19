@@ -314,8 +314,6 @@ export OPENWEATHER_API_KEY="<your-openweathermap-key>"
 export SARVAM_API_KEY="<your-sarvam-key>"
 ```
 
-> ⚠️ **Rotate any key that has ever been pasted into a chat, ticket, or committed to git history.** Add `application.yml` (if it contains real values) to `.gitignore`, or keep only the placeholder version in git and inject real values at runtime via environment variables / your CI-CD secrets store.
-
 ## 📡 API Overview
 
 | Endpoint | Controller | Purpose |
