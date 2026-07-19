@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 export default function PhoneDemo() {
   const [msgs, setMsgs] = useState([
     { t:'sys', tx:'English detected · Call connected' },
-    { t:'user', tx:'What is the price of wheat today?' },
-    { t:'ai', tx:'Wheat at Kolkata Market is ₹2,180/quintal today. It is ₹40 up from yesterday — good time to sell! 📈' }
+    { t:'user', tx:'I want to book a truck from Kolkata to Delhi for tomorrow. Please find me the best available option at the lowest price.' },
+    { t:'ai', tx:'Available: offline-ai-truck at ₹20/km for your route from Kolkata  to  delhi.Please wait up to 24 hours — we have sent your request to other registered trucks as well to find you the best price.' }
   ]);
   const [inp, setInp] = useState('');
 
