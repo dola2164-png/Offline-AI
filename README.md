@@ -25,7 +25,7 @@ Built by **Team   :  CodeGirl** for [ScriptedBy{Her} 2.0].
 - [The Problem](#-the-problem)
 - [Our Solution](#-our-solution)
 - [Why Agentic AI, Not a Chatbot](#-why-agentic-ai-not-a-chatbot)
-- [System Architecture](#-system-architecture)
+- [System Architecture](#%EF%B8%8F-system-architecture)
 - [How a Query Flows Through the System](#-how-a-query-flows-through-the-system)
 - [Tech Stack](#%EF%B8%8F-tech-stack)
 - [Open-Source Attribution](#-open-source-attribution)
