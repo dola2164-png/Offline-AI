@@ -59,9 +59,9 @@ A farmer dials a number or sends an SMS in their own language and gets back a sp
 | Feature | What it does |
 |---|---|
 | 🌾 **Disease Detection** | Identify crop problems and get actionable expert advice instantly |
+| 🚛 **Transport Booking** | Find and book trucks easily to prevent crop spoilage |
 | ⛅ **Weather Forecast** | Real-time, hyper-local weather updates to plan harvesting |
 | 💰 **Mandi Prices** | Live market prices across mandis to prevent middleman exploitation |
-| 🚛 **Transport Booking** | Find and book trucks easily to prevent crop spoilage |
 | 🏛️ **Govt. Schemes** | Discover and understand relevant agricultural subsidies |
 | 🗣️ **Multilingual Voice** | Speak in your local language — the AI understands and replies naturally |
 
