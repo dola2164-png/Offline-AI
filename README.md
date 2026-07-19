@@ -194,8 +194,6 @@ sequenceDiagram
 
 ## 📜 Open-Source Attribution
 
-In line with the hackathon's submission checklist, here is every open-source library, framework, or tool used in this build, along with license, version, and role.
-
 | Name & Version | License | Role in Build | Source |
 |---|---|---|---|
 | Spring Boot 3.x | Apache 2.0 | Direct integration — core backend framework powering all REST controllers and services | https://github.com/spring-projects/spring-boot |
