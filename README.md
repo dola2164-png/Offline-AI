@@ -184,7 +184,6 @@ sequenceDiagram
 | **Build Tools** | Maven (backend), npm/Vite (frontend) |
 | **Styling** | CSS (`index.css`), component-based architecture |
 
-> Update this table with your telephony/SMS provider (Twilio, Exotel, etc.) once wired up.
 
 ## 📁 Project Structure
 
