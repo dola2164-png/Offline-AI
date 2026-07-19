@@ -192,6 +192,20 @@ sequenceDiagram
 | **Build Tools** | Maven (backend), npm/Vite (frontend) |
 | **Styling** | CSS (`index.css`), component-based architecture |
 
+## 📜 Open-Source Attribution
+
+In line with the hackathon's submission checklist, here is every open-source library, framework, or tool used in this build, along with license, version, and role.
+
+| Name & Version | License | Role in Build | Source |
+|---|---|---|---|
+| Spring Boot 3.x | Apache 2.0 | Direct integration — core backend framework powering all REST controllers and services | https://github.com/spring-projects/spring-boot |
+| React 18.x | MIT | Direct integration — powers the entire frontend dashboard (Home, Truck, Agent Experience, About/Impact pages) | https://github.com/facebook/react |
+| Vite | MIT | Direct integration — frontend build tool and dev server | https://github.com/vitejs/vite |
+| OpenAI Whisper | MIT | Direct integration — speech-to-text transcription of farmer voice calls | https://github.com/openai/whisper |
+| Maven | Apache 2.0 | Direct integration — backend build and dependency management | https://maven.apache.org/ |
+| Node.js / npm | MIT | Direct integration — frontend package management and runtime | https://github.com/nodejs/node |
+
+**Note:** Groq (Llama 3.1 reasoning), Sarvam AI (text-to-speech), and OpenWeatherMap are used as hosted third-party APIs (not open-source code we redistribute), and are already documented under [Tech Stack](#-tech-stack) and [Environment Variables](#-environment-variables) above.
 
 ## 📁 Project Structure
 
