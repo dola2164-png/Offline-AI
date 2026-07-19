@@ -9,6 +9,7 @@ Offline AI brings agentic, multilingual, AI-powered farming assistance to **any 
 Built by **Team   :  CodeGirl** for [ScriptedBy{Her} 2.0].
 
   🌐 Live: [Offline-AI](https://offline-ai-frontend.onrender.com/)
+  and
   🌐 [Backend](https://offline-ai-backend.onrender.com/) 
 ---
 ## 📸 Demo
