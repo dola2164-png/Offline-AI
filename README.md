@@ -28,6 +28,7 @@ Built by **Team   :  CodeGirl** for [ScriptedBy{Her} 2.0].
 - [System Architecture](#-system-architecture)
 - [How a Query Flows Through the System](#-how-a-query-flows-through-the-system)
 - [Tech Stack](#tech-stack)
+- [Open-Source Attribution](#-open-source-attribution)
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
 - [Environment Variables](#-environment-variables)
