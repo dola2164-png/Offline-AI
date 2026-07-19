@@ -246,7 +246,7 @@ offline-ai/
 - Java 17+ and Maven (or use the included `mvnw` wrapper)
 - Node.js 18+ and npm
 - A database (update `application.yml` with your connection details)
-- API keys for weather, Sarvam AI, and any telephony/SMS provider you integrate
+- API keys for weather, Sarvam AI
 
 ### Backend Setup
 
