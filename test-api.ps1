@@ -3,7 +3,7 @@ $headers = @{
 }
 
 $body = @{
-    message = "mandi price kolkata today"
+    message = "potato price in kolkata market today"
     language = "English"
 } | ConvertTo-Json
 
