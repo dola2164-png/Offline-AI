@@ -33,7 +33,7 @@ Built by **Team   :  CodeGirl** for [ScriptedBy{Her} 2.0].
 - [Getting Started](#-getting-started)
 - [Environment Variables](#-environment-variables)
 - [API Overview](#-api-overview)
-- [Roadmap](#-roadmap)
+- [Roadmap](#%EF%B8%8F-roadmap)
 - [License](#-license)
 
 ---
