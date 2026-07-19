@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { API_URL } from '../../config';
 const LANGUAGES = ['Hindi', 'English', 'Bengali', 'Tamil', 'Telugu', 'Marathi', 'Gujarati', 'Kannada', 'Malayalam', 'Punjabi', 'Urdu', 'Odia', 'Assamese', 'Konkani', 'Nepali', 'Sindhi', 'Dogri', 'Kashmiri', 'Manipuri', 'Bodo'];
-const API_BASE = `${API_URL}/api`;
+const API_BASE = 'http://localhost:8080/api';
 const LANGUAGE_CODES = { Hindi: 'hi-IN', Bengali: 'bn-IN', Tamil: 'ta-IN', Telugu: 'te-IN', Marathi: 'mr-IN', Gujarati: 'gu-IN', Kannada: 'kn-IN', Malayalam: 'ml-IN', Punjabi: 'pa-IN', Urdu: 'ur-IN' };
 
 const GREETINGS = {
@@ -48,7 +47,7 @@ export default function AgentExperiencePage() {
   const [screen, setScreen] = useState('home');
   const [language, setLanguage] = useState('English');
   const [message, setMessage] = useState('');
-  
+
   // Set the initial message dynamically using the language state
   const [messages, setMessages] = useState(() => [
     { type: 'ai', text: GREETINGS['English'] }
@@ -59,6 +58,7 @@ export default function AgentExperiencePage() {
   const [isRecording, setIsRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const audioChunksRef = useRef([]), timerRef = useRef(null), messagesEndRef = useRef(null);
+  const currentAudioRef = useRef(null); // tracks the Audio object currently playing an AI voice reply (Sarvam TTS)
 
   // Translate the greeting message whenever the language state changes
   useEffect(() => {
@@ -66,18 +66,30 @@ export default function AgentExperiencePage() {
       const updated = [...prev];
       if (updated.length > 0 && updated[0].type === 'ai') {
         // Swap out the first system message with the selected language translation
-        updated[0] = { 
-          ...updated[0], 
-          text: GREETINGS[language] || GREETINGS.English 
+        updated[0] = {
+          ...updated[0],
+          text: GREETINGS[language] || GREETINGS.English
         };
       }
       return updated;
     });
   }, [language]);
 
+  // Stops ANY currently playing AI voice: both the browser speechSynthesis fallback
+  // and the real Sarvam-generated <audio> clip (which speechSynthesis.cancel() alone can't touch).
+  const stopSpeaking = () => {
+    window.speechSynthesis?.cancel();
+    if (currentAudioRef.current) {
+      currentAudioRef.current.pause();
+      currentAudioRef.current.currentTime = 0;
+      currentAudioRef.current = null;
+    }
+  };
+
   useEffect(() => {
     if (screen !== 'voice') {
-      clearInterval(timerRef.current); setCallDuration(0); setVoiceStatus('Connected'); window.speechSynthesis?.cancel();
+      clearInterval(timerRef.current); setCallDuration(0); setVoiceStatus('Connected');
+      stopSpeaking();
       if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
       setIsRecording(false); audioChunksRef.current = [];
       return;
@@ -90,7 +102,7 @@ export default function AgentExperiencePage() {
     if (screen === 'messages' && messagesEndRef.current) messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
   }, [messages, screen]);
 
-  const goHome = () => { window.speechSynthesis?.cancel(); setScreen('home'); };
+  const goHome = () => { stopSpeaking(); setScreen('home'); };
 
   const apiCall = async (endpoint, body, fallback, delay) => {
     try {
@@ -104,9 +116,14 @@ export default function AgentExperiencePage() {
   const speak = (data, onEnd) => {
     if (data.audioBase64) {
       const audio = new Audio(`data:audio/wav;base64,${data.audioBase64}`);
-      audio.onended = onEnd;
-      audio.onerror = () => { console.error('Sarvam audio playback failed, falling back to browser TTS'); speakBrowser(data.reply, onEnd); };
-      audio.play().catch(() => speakBrowser(data.reply, onEnd));
+      currentAudioRef.current = audio;
+      audio.onended = () => { currentAudioRef.current = null; onEnd(); };
+      audio.onerror = () => {
+        currentAudioRef.current = null;
+        console.error('Sarvam audio playback failed, falling back to browser TTS');
+        speakBrowser(data.reply, onEnd);
+      };
+      audio.play().catch(() => { currentAudioRef.current = null; speakBrowser(data.reply, onEnd); });
     } else {
       speakBrowser(data.reply, onEnd);
     }
@@ -118,7 +135,7 @@ export default function AgentExperiencePage() {
     window.speechSynthesis?.speak(utterance);
   };
 
-  // Converts local {type, text} messages into backend {role, content} 
+  // Converts local {type, text} messages into backend {role, content}
   const toHistory = msgs => msgs.map(m => ({ role: m.type === 'user' ? 'user' : 'assistant', content: m.text }));
 
   const sendMessage = async () => {
