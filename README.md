@@ -203,7 +203,7 @@ sequenceDiagram
 | Maven | Apache 2.0 | Direct integration — backend build and dependency management | https://maven.apache.org/ |
 | Node.js / npm | MIT | Direct integration — frontend package management and runtime | https://github.com/nodejs/node |
 
-**Note:** Groq (Llama 3.1 reasoning), Sarvam AI (text-to-speech), and OpenWeatherMap are used as hosted third-party APIs (not open-source code we redistribute), and are already documented under [Tech Stack](#-tech-stack) and [Environment Variables](#-environment-variables) above.
+**Note:** Groq (Llama 3.1 reasoning), Sarvam AI (text-to-speech), and OpenWeatherMap are used as hosted third-party APIs , and are already documented under [Tech Stack](#%EF%B8%8F-tech-stack) and [Environment Variables](#-environment-variables) above.
 
 ## 📁 Project Structure
 
