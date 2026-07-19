@@ -6,7 +6,7 @@
 
 Offline AI brings agentic, multilingual, AI-powered farming assistance to **any phone** — feature phone or smartphone — over a simple **voice call or SMS**. No app to install, no data plan, no literacy barrier.
 
-Built by **Team CodeGirl** for [Hackathon Name].
+Built by **Team CodeGirl** for [ScriptedBy{Her} 2.0].
 
   🌐 Live: [Offline-AI](https://offline-ai-frontend.onrender.com/)
 
