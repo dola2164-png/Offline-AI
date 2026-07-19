@@ -1,4 +1,4 @@
-# 📵 Offline AI — Agentic AI Farming Assistant for Every Phone
+# 📵 Offline AI — Agentic AI Farming Assistant for Every Phone 
 
 **No App. No Internet. No Smartphone Required.**
 
