@@ -11,6 +11,11 @@ Built by **Team CodeGirl** for [ScriptedBy{Her} 2.0].
   🌐 Live: [Offline-AI](https://offline-ai-frontend.onrender.com/)
 
 ---
+## 📸 Demo
+<img width="1920" height="1200" alt="Screenshot (458)" src="https://github.com/user-attachments/assets/39274f35-643f-4c40-8534-9d1f5733eb83" />
+<img width="1920" height="1200" alt="Screenshot (457)" src="https://github.com/user-attachments/assets/69e5ca8e-b6a0-4d30-8b3d-358e3a653b69" />
+
+
 
 ## 📑 Table of Contents
 
