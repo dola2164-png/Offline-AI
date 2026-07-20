@@ -13,12 +13,9 @@ Built by **Team   :  CodeGirl** for [ScriptedBy{Her} 2.0].
   🌐 [Backend](https://offline-ai-backend.onrender.com/) 
 ---
 ## 📸 Demo
-<img width="1920" height="1200" alt="Screenshot (458)" src="https://github.com/user-attachments/assets/39274f35-643f-4c40-8534-9d1f5733eb83" />
-<img width="1920" height="1140" alt="Screenshot (428)" src="https://github.com/user-attachments/assets/c8df8b80-c36d-4f62-8af4-6981398c1149" />
+<img width="1920" height="1200" alt="Screenshot (476)" src="https://github.com/user-attachments/assets/eac5551b-598b-4ad1-a89a-2655614b36da" />
 <img width="1920" height="1120" alt="Screenshot (464)" src="https://github.com/user-attachments/assets/29642246-a3c3-4050-8257-00e49b4dc009" />
-
-
-
+<img width="1920" height="1200" alt="Screenshot (458)" src="https://github.com/user-attachments/assets/39274f35-643f-4c40-8534-9d1f5733eb83" />
 
 
 ## 📑 Table of Contents
