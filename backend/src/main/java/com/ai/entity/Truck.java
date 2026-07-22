@@ -19,10 +19,10 @@ public class Truck {
     @Column(name = "owner_name", nullable = false)
     private String ownerName;
 
-    @Column(name = "phone_number", nullable = false, unique = true)
+    @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(unique = true)
+    @Column(name = "email", nullable = false)
     private String email;
 
     @Column(name = "mileage_kmpl")
