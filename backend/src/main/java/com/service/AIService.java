@@ -109,6 +109,15 @@ public class AIService {
                         "destination", param("string", "Drop-off city/town"),
                         "date", param("string", "Pickup date, can be relative like tomorrow")
                 ), List.of("source", "destination")));
+                tools.add(tool("confirm_booking",
+                "Confirm and finalize a truck booking AFTER the user has already been given a quote " +
+                "(via book_truck) and has now explicitly said they want to proceed, e.g. 'I want to book it', " +
+                "'yes, book it', 'confirm'. Do NOT call this for the first request — call book_truck first.",
+                Map.of(
+                        "source", param("string", "Pickup city/town"),
+                        "destination", param("string", "Drop-off city/town"),
+                        "date", param("string", "Pickup date, can be relative like tomorrow")
+                ), List.of("source", "destination")));
         tools.add(tool("diagnose_crop_disease",
                 "Diagnose a crop/tree disease from symptoms and suggest treatment.",
                 Map.of(

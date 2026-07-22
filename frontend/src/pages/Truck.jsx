@@ -3,10 +3,54 @@ import React, { useState } from 'react';
 export default function TruckOwner() {
   const [showForm, setShowForm] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents page reload
-    setIsSubmitted(true);
+  const [formData, setFormData] = useState({
+    truckModel: '',
+    cityPin: '',
+    ownerName: '',
+    phoneNumber: '',
+    email: '',
+    mileageKmpl: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setSubmitting(true);
+
+    try {
+      const payload = {
+        truckModel: formData.truckModel,
+        cityPin: formData.cityPin,
+        ownerName: formData.ownerName,
+        phoneNumber: formData.phoneNumber,
+        email: formData.email,
+        mileageKmpl: formData.mileageKmpl ? parseFloat(formData.mileageKmpl) : null
+      };
+
+      const response = await fetch('/api/trucks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(text || `Request failed with status ${response.status}`);
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -17,25 +61,68 @@ export default function TruckOwner() {
         Get direct booking requests via SMS. No smartphone needed to accept rides and transport crops for farmers in your area.
       </p>
 
-      {/* 1. Default State: Show Register Button */}
       {!showForm && !isSubmitted && (
         <button className="bp" onClick={() => setShowForm(true)}>Register your Truck</button>
       )}
 
-      {/* 2. Form State: Show Inputs */}
       {showForm && !isSubmitted && (
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '300px', margin: '0 auto' }}>
-          <input type="text" placeholder="Truck Model" required />
-          <input type="number" placeholder="City PIN" required />
-          <input type="text" placeholder="Owner Name" required />
-          <input type="number" placeholder="Phone Number" required />
-          <input type="email" placeholder="Gmail Address" required />
-          <input type="number" placeholder="Mileage KMPL (Optional)" />
-          <button type="submit" className="bp" style={{ marginTop: '10px' }}>Submit</button>
+          <input
+            type="text"
+            name="truckModel"
+            placeholder="Truck Model"
+            value={formData.truckModel}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="cityPin"
+            placeholder="City PIN"
+            value={formData.cityPin}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="ownerName"
+            placeholder="Owner Name"
+            value={formData.ownerName}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="phoneNumber"
+            placeholder="Phone Number"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Gmail Address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="number"
+            name="mileageKmpl"
+            placeholder="Mileage KMPL (Optional)"
+            value={formData.mileageKmpl}
+            onChange={handleChange}
+          />
+
+          {error && <p style={{ color: 'red', margin: 0 }}>{error}</p>}
+
+          <button type="submit" className="bp" style={{ marginTop: '10px' }} disabled={submitting}>
+            {submitting ? 'Submitting...' : 'Submit'}
+          </button>
         </form>
       )}
 
-      {/* 3. Success State: Show Thank You Message */}
       {isSubmitted && (
         <div style={{ padding: '20px', border: '1px solid green', borderRadius: '5px', maxWidth: '400px', margin: '0 auto' }}>
           <h3 style={{ color: 'green', margin: '0 0 10px 0' }}>Thank you for registering!</h3>

@@ -81,7 +81,7 @@ public class ChatService {
         lastToolUsed = call.name();
         String toolResult = runTool(call);
 
-        if (call.name().equals("book_truck")) {
+      if (call.name().equals("book_truck") || call.name().equals("confirm_booking")) {
             truckResultText = toolResult;
         }
 
@@ -129,7 +129,9 @@ public class ChatService {
             case "book_truck" -> truck.getBookingResponse(
                     str(a, "source"), str(a, "destination"),
                     a.get("date") != null ? str(a, "date") : "tomorrow");
-            case "diagnose_crop_disease" -> ai.generateCropDiseaseAnswer(str(a, "symptoms"));
+            case "confirm_booking" -> truck.confirmBooking(
+                    str(a, "source"), str(a, "destination"),
+                    a.get("date") != null ? str(a, "date") : "tomorrow");
             case "get_gov_services" -> ai.generateGovServicesAnswer(str(a, "need"));
             default -> "Unknown tool: " + call.name();
         };

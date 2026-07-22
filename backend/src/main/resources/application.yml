@@ -29,5 +29,3 @@ sarvam:
   api-key: ${SARVAM_API_KEY}
   speaker: anushka
   model: bulbul:v2
-
-

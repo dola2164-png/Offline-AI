@@ -16,6 +16,7 @@ public class TruckRegistrationController {
     @Autowired
     private TruckRepository truckRepository;
 
+
     @PostMapping
     public Truck registerTruck(@RequestBody Truck truck) {
         return truckRepository.save(truck);
