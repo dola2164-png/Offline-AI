@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { API_URL } from '../../config';
+
+const API_BASE = `${API_URL}/api`;
 
 export default function TruckOwner() {
   const [showForm, setShowForm] = useState(false);
@@ -34,7 +37,7 @@ export default function TruckOwner() {
         mileageKmpl: formData.mileageKmpl ? parseFloat(formData.mileageKmpl) : null
       };
 
-      const response = await fetch('/api/trucks', {
+      const response = await fetch(`${API_BASE}/trucks`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
