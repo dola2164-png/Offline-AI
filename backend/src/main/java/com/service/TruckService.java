@@ -36,7 +36,7 @@ public class TruckService {
         }
 
         return guaranteedOption + " We've also sent your request to " + trucks.size() +
-               " other registered truck owner(s) — please wait up to 24 hours in case someone offers a better price.";
+               " other registered truck owner(s) — please wait up to 4 hours in case someone offers a better price.";
     }
 
     public String confirmBooking(String source, String destination, String date) {
